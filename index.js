@@ -50,6 +50,10 @@ const userRoles = [
   },
 ];
 
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
+
 app.get('/api/roles', (req, res) => {
   res.json(userRoles);
 });
