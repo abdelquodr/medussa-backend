@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const serverless = require('serverless-http');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -61,3 +62,6 @@ app.get('/api/roles', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
+module.exports.handler = serverless(app);
